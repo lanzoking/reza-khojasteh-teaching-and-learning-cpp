@@ -9,7 +9,7 @@ namespace seneca {
 		char m_fName[41]{};
 		char m_lName[41]{};
 	public:
-		// Constructors (incuding a cast operator; the second one.)
+		// Constructors (including a cast operator; the second one.)
 		Employee();
 		Employee(long);
 		Employee(long, const char*, const char*);

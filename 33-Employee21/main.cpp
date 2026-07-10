@@ -15,7 +15,7 @@ int main() {
 	cout << endl;
 
 	derived.read(cin);
-	// But the following is ok, because print has been overridden in the derived class:
+	// But the following is ok, because print is shadowing over (not overriding - more on that later) the based class's print version:
 	derived.print(cout);
 
 	cout << endl;

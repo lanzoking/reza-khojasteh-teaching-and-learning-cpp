@@ -45,17 +45,21 @@ namespace seneca {
 
 		cout << "Enter Employee ID: ";
 		// read the ID from the input buffer
-		is >> m_ID;
+
+		// Even though you can say the following, don't!
+		// is >> m_ID;
+		// Instead, we make a temp object by calling the constructor to let the validation checking happen:
+		is >> id;
 
 		cout << "Enter Employee First Name: ";
 		// read the first name from the input buffer
-		is >> m_fName;
+		is >> fName;
 
 		cout << "Enter Employee Last Name: ";
 		// read the last name from the input buffer
-		is >> m_lName;
+		is >> lName;
 
-		// construct a temporary Student
+		// construct a temporary Employee
 		Employee temp(id, fName, lName);
 		// if data is valid, the temporary object into the current object
 		if (temp.m_ID != 0 && temp.m_fName[0] != '\0' && temp.m_lName[0] != '\0')
@@ -79,7 +83,7 @@ namespace seneca {
 	//	return os;
 	//}
 
-	// And now, the implmentations for the derived class member functions:
+	// And now, the implementations for the derived class member functions:
 	double HourlyBasedEmployee::getNoOfHorsWorked() const {
 		return m_noOfHoursWorked;
 	}
